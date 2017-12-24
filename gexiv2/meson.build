@@ -62,7 +62,7 @@ gexiv2 = library('gexiv2',
                  enum_sources,
                  link_args : vflag,
                  include_directories : include_directories('..'),
-                 version: '2.0.0',
+                 version: '3.0.0',
                  dependencies : [gobject, exiv2],
                  install : true)
 

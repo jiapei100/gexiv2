@@ -91,6 +91,7 @@ if introspection_available
                  version_header,
                  enum_sources.get(1)
                  ],
+      header : 'gexiv2/gexiv2.h',
       namespace : 'GExiv2',
       nsversion : '0.10',
       symbol_prefix : 'gexiv2',
@@ -99,4 +100,11 @@ if introspection_available
       includes : ['GObject-2.0'],
       header : 'gexiv2/gexiv2.h',
       install : true)
+
+    if vapi_available
+        vapi = gnome.generate_vapi('gexiv2',
+                               sources : gir.get(0),
+                               install : true,
+                               packages: pc_deps)
+    endif
 endif
